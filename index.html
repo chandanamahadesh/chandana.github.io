@@ -1,194 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandana Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandana Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    :root {
-      --bg: #ffffff;
-      --text: #000000;
-      --card: #f3f3f3;
-    }
-    .dark {
-      --bg: #0d0d0d;
-      --text: #ffffff;
-      --card: #1a1a1a;
-    }
+        body {
+            background: linear-gradient(135deg, #1e1e2f, #2e3350);
+            color: #fff;
+            padding: 40px;
+        }
 
-    header {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease-in-out;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      background: #222;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);} 
+            to {opacity: 1; transform: translateY(0);} 
+        }
 
-    section {
-      padding: 40px;
-      text-align: center;
-    }
+        header {
+            text-align: center;
+        }
 
-    .typing {
-      font-size: 22px;
-      font-weight: bold;
-      color: #2575fc;
-      height: 30px;
-    }
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #00e5ff;
+        }
 
-    .project-card, .skill-card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin: 20px auto;
-      max-width: 600px;
-      transition: 0.3s;
-    }
-    .project-card:hover, .skill-card:hover {
-      transform: translateY(-5px);
-    }
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #2575fc;
-      color: white;
-      cursor: pointer;
-      font-size: 16px;
-    }
+        header h3 {
+            font-weight: 400;
+            color: #a8a8c7;
+        }
 
-    form input, form textarea {
-      width: 80%;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-  </style>
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #00e5ff;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            color: #00e5ff;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #00e5ff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #bbb;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="Profile Photo">
+            <h1>Chandana </h1>
+            <h3>AI & Machine Learning Engineer | GenAI Developer</h3>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <button onclick="toggleMode()">🌙</button>
-  </nav>
+            <nav>
+                <a href="chandanamahadesha1@gmail.com" title="Email"><i class="ri-mail-line"></i></a>
+                <a href="https://www.linkedin.com/in/chandana-rm-a68a85282" target="_blank" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                <a href="https://github.com/chandanamahadesh" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
+                <a href="resume.pdf" target="_blank" title="Resume"><i class="ri-file-text-line"></i></a>
+                <a href="8317420839" target="_blank" title="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+            </nav>
+        </header>
 
-  <header id="home">
-    <h1>Hi, I'm Chandu</h1>
-    <div class="typing"></div>
-    <br>
-    <a href="resume.pdf" download><button>Download Resume</button></a>
-  </header>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>I am a 4th-year CS-AIML student passionate about Artificial Intelligence, Machine Learning, and Generative AI. I build real-world AI projects including Smart City ML systems, Clean Energy Dashboard, Dead Body Detection in Water (YOLO), and more.</p>
+        </div>
 
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div id="skill-list"></div>
-  </section>
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="projects">
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div id="project-list"></div>
-  </section>
+                <div class="project-card">
+                    <h3>🚦 Traffic Accident Severity Prediction</h3>
+                    <p>Predicting accident severity using ML & DL decision-level fusion techniques.</p>
+                </div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/movqqbwa" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <br>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+                <div class="project-card">
+                    <h3>🛰️ Clean Energy Dashboard</h3>
+                    <p>Real‑time clean energy generation & consumption monitoring web app.</p>
+                </div>
 
-  <script>
-    // Dark Mode Toggle
-    function toggleMode() {
-      document.body.classList.toggle('dark');
-    }
+               
+                <div class="project-card">
+                    <h3>📅 Calendar & Reminder App</h3>
+                    <p>Tkinter-based GUI app with alert system, full-screen UI, and file-based storage.</p>
+                </div>
 
-    // Typing Effect
-    const texts = ["AI/ML  Engineer", "Full Stack Developer", "Generative AI Enthusiast"];
-    let index = 0, char = 0;
-    function typeEffect() {
-      const typingDiv = document.querySelector('.typing');
-      typingDiv.textContent = texts[index].substring(0, char);
-      char++;
-      if (char > texts[index].length) {
-        char = 0;
-        index = (index + 1) % texts.length;
-      }
-      setTimeout(typeEffect, 150);
-    }
-    typeEffect();
+            </div>
+        </div>
 
-    // Dynamic Skills
-    const skills = ["Python", "Machine Learning", "Deep Learning", "YOLO & OpenCV", "JavaScript", "HTML/CSS", "React Basics"];
-    const skillList = document.getElementById("skill-list");
-    skills.forEach(s => {
-      const card = document.createElement("div");
-      card.className = "skill-card";
-      card.textContent = s;
-      skillList.appendChild(card);
-    });
-
-    // Dynamic Projects
-    const projects = [
-      {
-        title: "Traffic Accident Severity Prediction",
-        description: "ML model to predict severity using driver, vehicle, and road data.",
-        link: "https://github.com/chandanamahadesh"
-      },
-      {
-        title: "Dead Body Detection in Water",
-        description: "AI system using YOLO for underwater detection.",
-        link: "https://github.com/chandanamahadesh"
-      },
-      {
-        title: "Clean Energy Dashboard",
-        description: "Web app with real-time solar/wind monitoring.",
-        link: "https://github.com/chandanamahadesh"
-      }
-    ];
-
-    const projectList = document.getElementById("project-list");
-    projects.forEach(p => {
-      const card = document.createElement("div");
-      card.className = "project-card";
-      card.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><a href="${p.link}" target="_blank">View Project</a>`;
-      projectList.appendChild(card);
-    });
-  </script>
-
+        <footer>
+            © 2025 Chandu | All Rights Reserved
+        </footer>
+    </div>
 </body>
 </html>
    
 
+   
+  
+ 
 
+   
+  
 
     

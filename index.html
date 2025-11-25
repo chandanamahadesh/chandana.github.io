@@ -3,114 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandana Mahadesh | Portfolio</title>
+  <title>Chandana Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #4e73df, #1cc88a);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 48px;
-      margin: 0;
-    }
-    header p {
-      font-size: 20px;
-    }
-    .section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .section h2 {
-      margin-top: 0;
-      font-size: 28px;
-      color: #4e73df;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: #fafafa;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: var(--bg);
+      color: var(--text);
       transition: 0.3s;
     }
-    .project-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --card: #f3f3f3;
     }
-    .footer {
-      text-align: center;
+    .dark {
+      --bg: #0d0d0d;
+      --text: #ffffff;
+      --card: #1a1a1a;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       padding: 20px;
-      background: #222;
       color: white;
-      margin-top: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #222;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .typing {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2575fc;
+      height: 30px;
+    }
+
+    .project-card, .skill-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      max-width: 600px;
+      transition: 0.3s;
+    }
+    .project-card:hover, .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2575fc;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form input, form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Chandana Mahadesh</h1>
-  <p>AI/ML Engineer | Final Year • Portfolio</p>
-</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button onclick="toggleMode()">🌙</button>
+  </nav>
 
-<div class="section">
-  <h2>About Me</h2>
-  <p>Hello! I'm Chandana (Chandu), a final-year AI & ML engineering student passionate about building real-world machine learning and generative AI projects. I enjoy solving problems and creating modern applications.</p>
-</div>
+  <header id="home">
+    <h1>Hi, I'm Chandu</h1>
+    <div class="typing"></div>
+    <br>
+    <a href="resume.pdf" download><button>Download Resume</button></a>
+  </header>
 
-<div class="section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div id="skill-list"></div>
+  </section>
 
-    <div class="project-card">
-      <h3>🚗 Traffic Accident Severity Prediction</h3>
-      <p>Predicts accident severity using machine learning and deep learning decision-level fusion. Useful for police, finance, and safety departments.</p>
-    </div>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div id="project-list"></div>
+  </section>
 
-    <div class="project-card">
-      <h3>🛟 Dead Body Detection in Water</h3>
-      <p>YOLO + Arduino-based system that detects human bodies floating on water for rescue and safety alerts.</p>
-    </div>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/movqqbwa" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-    <div class="project-card">
-      <h3>🌞 Clean Energy Dashboard</h3>
-      <p>Tracks solar & wind energy production with interactive charts, maps, and live statistics.</p>
-    </div>
+  <script>
+    // Dark Mode Toggle
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
 
-    <div class="project-card">
-      <h3>📅 Smart Calendar & Reminder App</h3>
-      <p>Python Tkinter app with alerts, file-saving, and improved full-screen UI.</p>
-    </div>
+    // Typing Effect
+    const texts = ["AI/ML  Engineer", "Full Stack Developer", "Generative AI Enthusiast"];
+    let index = 0, char = 0;
+    function typeEffect() {
+      const typingDiv = document.querySelector('.typing');
+      typingDiv.textContent = texts[index].substring(0, char);
+      char++;
+      if (char > texts[index].length) {
+        char = 0;
+        index = (index + 1) % texts.length;
+      }
+      setTimeout(typeEffect, 150);
+    }
+    typeEffect();
 
-  </div>
-</div>
+    // Dynamic Skills
+    const skills = ["Python", "Machine Learning", "Deep Learning", "YOLO & OpenCV", "JavaScript", "HTML/CSS", "React Basics"];
+    const skillList = document.getElementById("skill-list");
+    skills.forEach(s => {
+      const card = document.createElement("div");
+      card.className = "skill-card";
+      card.textContent = s;
+      skillList.appendChild(card);
+    });
 
-<div class="section">
-  <h2>Contact</h2>
-  <p>Email: <b>yourmail@gmail.com</b></p>
-  <p>GitHub: github.com/chandanamahadesh</p>
-</div>
+    // Dynamic Projects
+    const projects = [
+      {
+        title: "Traffic Accident Severity Prediction",
+        description: "ML model to predict severity using driver, vehicle, and road data.",
+        link: "https://github.com/chandanamahadesh"
+      },
+      {
+        title: "Dead Body Detection in Water",
+        description: "AI system using YOLO for underwater detection.",
+        link: "https://github.com/chandanamahadesh"
+      },
+      {
+        title: "Clean Energy Dashboard",
+        description: "Web app with real-time solar/wind monitoring.",
+        link: "https://github.com/chandanamahadesh"
+      }
+    ];
 
-<div class="footer">
-  © 2025 Chandana Mahadesh | All Rights Reserved
-</div>
+    const projectList = document.getElementById("project-list");
+    projects.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><a href="${p.link}" target="_blank">View Project</a>`;
+      projectList.appendChild(card);
+    });
+  </script>
 
 </body>
 </html>
+   
+
+
+
+    

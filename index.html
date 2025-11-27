@@ -1,178 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandana Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #1e1e2f, #2e3350);
-            color: #fff;
-            padding: 40px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);} 
-            to {opacity: 1; transform: translateY(0);} 
-        }
-
-        header {
-            text-align: center;
-        }
-
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #00e5ff;
-        }
-
-        header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
-
-        header h3 {
-            font-weight: 400;
-            color: #a8a8c7;
-        }
-
-        nav {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 10px;
-            color: #00e5ff;
-            font-size: 24px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-            transform: scale(1.2);
-        }
-
-        .section {
-            margin-top: 40px;
-        }
-
-        .section h2 {
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            color: #00e5ff;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-            color: #00e5ff;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #bbb;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Chandana RM — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <img src="profile.jpeg" alt="Profile Photo">
-            <h1>Chandana </h1>
-            <h3>AI & Machine Learning Engineer | Data Analyst</h3>
+  <div class="site">
+    <header class="header">
+      <div class="brand">
+        <div class="avatar">
+          <img src="profile.jpeg" alt="Chandana profile">
+        </div>
+        <div class="title">
+          <h1>Chandana</h1>
+          <p>AI & Machine Learning Engineer | Data Analyst</p>
+        </div>
+      </div>
 
-            <nav>
-                <a href="mailto:chandanamahadesha1@gmail.com" title="Email"><i class="ri-mail-line"></i></a>
-                <a href="https://www.linkedin.com/in/chandana-rm-a68a85282" target="_blank" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
-                <a href="https://github.com/chandanamahadesh" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
-                <a href="resume.pdf" target="_blank" title="Resume"><i class="ri-file-text-line"></i></a>
-                <a href="tel:8317420839" target="_blank" title="Call"><i class="ri-phone-line"></i></a>
-            </nav>
-        </header>
+      <nav class="nav">
+        <a href="index.html" data-path="index.html"><i class="ri-home-4-line"></i>Home</a>
+        <a href="about.html" data-path="about.html"><i class="ri-user-3-line"></i>About</a>
+        <a href="services.html" data-path="services.html"><i class="ri-briefcase-4-line"></i>Services</a>
+        <a href="projects.html" data-path="projects.html"><i class="ri-bricks-line"></i>Projects</a>
+        <a href="certifications.html" data-path="certifications.html"><i class="ri-certificate-line"></i>Certs</a>
+        <a href="contact.html" data-path="contact.html"><i class="ri-mail-line"></i>Contact</a>
+      </nav>
+    </header>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p>I am a 4th-year CS-AIML student passionate about Artificial Intelligence, Machine Learning, and Generative AI. I build real-world AI projects including Smart City ML systems, Clean Energy Dashboard, Dead Body Detection in Water (YOLO), and more.</p>
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h2>Hi, I'm Chandana</h2>
+          <p>I build practical AI systems — from computer vision (YOLO) to ML pipelines and dashboards. Currently a 4th-year CS-AIML student focused on Generative AI and real-world ML applications.</p>
+
+          <div class="icons">
+            <a class="icon" href="mailto:chandanamahadesha1@gmail.com" title="Email"><i class="ri-mail-line"></i></a>
+            <a class="icon" href="https://www.linkedin.com/in/chandana-rm-a68a85282" target="_blank" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+            <a class="icon" href="https://github.com/chandanamahadesh" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
+            <a class="icon" href="https://wa.me/8317420839" target="_blank" title="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+          </div>
         </div>
 
-        <div class="section">
-            <h2>Projects</h2>
-            <div class="projects">
+        <aside class="quick">
+          <h3>Quick Links</h3>
+          <a href="projects.html">See Projects →</a>
+          <a href="certifications.html">Certifications →</a>
+          <a href="contact.html">Hire / Contact →</a>
+        </aside>
+      </section>
 
-                <div class="project-card">
-                    <h3>🚦 Traffic Accident Severity Prediction</h3>
-                    <p>Predicting accident severity using ML & DL decision-level fusion techniques.</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>🛰️ Clean Energy Dashboard</h3>
-                    <p>Real‑time clean energy generation & consumption monitoring web app.</p>
-                </div>
-
-               
-                <div class="project-card">
-                    <h3>📅 Calendar & Reminder App</h3>
-                    <p>Tkinter-based GUI app with alert system, full-screen UI, and file-based storage.</p>
-                </div>
-
+      <section class="section">
+        <h3 style="color:var(--accent);margin:0 0 8px">Featured Projects</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="project-title">
+              <div style="font-size:22px">🚦</div>
+              <h4>Traffic Accident Severity Prediction</h4>
             </div>
-        </div>
+            <p class="project-desc">Decision-level fusion of ML & DL models to predict accident severity using driver, road & environmental data.</p>
+          </div>
 
-        <footer>
-            © 2025 Chandu | All Rights Reserved
-        </footer>
-    </div>
+          <div class="card">
+            <div class="project-title">
+              <div style="font-size:22px">🛰️</div>
+              <h4>Clean Energy Dashboard</h4>
+            </div>
+            <p class="project-desc">Real-time monitoring & visualization of solar/wind generation and consumption with charts & alerts.</p>
+          </div>
+
+          <div class="card">
+            <div class="project-title">
+              <div style="font-size:22px">📅</div>
+              <h4>Calendar & Reminder App</h4>
+            </div>
+            <p class="project-desc">Tkinter GUI with file-based storage, full-screen UI, and notification alerts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 style="color:var(--accent);margin:0 0 8px">What I Offer</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="service-icon"><i class="ri-code-fill"></i></div>
+            <h4>ML Model Development</h4>
+            <p class="project-desc">From data pre-processing to model deployment (Flask/Gunicorn, containerized).</p>
+          </div>
+          <div class="card">
+            <div class="service-icon"><i class="ri-pie-chart-line"></i></div>
+            <h4>Data Analysis & Visualization</h4>
+            <p class="project-desc">Dashboards, EDA, time-series analysis and insights for decision making.</p>
+          </div>
+          <div class="card">
+            <div class="service-icon"><i class="ri-database-2-line"></i></div>
+            <h4>End-to-end Projects</h4>
+            <p class="project-desc">Prototype to production integrations with hardware (Arduino + Python) when needed.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">© 2025 Chandana Available for internships & freelance</footer>
+    </main>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
-   
-
-   
-  
- 
-
-   
-  
-
-    
